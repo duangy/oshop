@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
+import { AuthService } from '../services/auth-service.service';
 
 @Component({
   selector: 'bs-navbar',
@@ -7,10 +8,10 @@ import { Observable } from 'rxjs/Observable';
   styleUrls: ['./bs-navbar.component.css']
 })
 export class BsNavbarComponent {
-  user$: Observable<any>;
-  constructor() { }
-
-  login() {}
-
-  logout() {}
+  username: string;
+  constructor(private auth: AuthService) { 
+    if(this.auth.currentUser){
+      this.username = this.auth.currentUser.username;
+    } 
+  }
 }
