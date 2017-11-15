@@ -1,3 +1,11 @@
-<p>
-  login works!
-</p>
+<form class="form-signin" #f="ngForm" (ngSubmit)="login(f.value)">
+  <h2 class="form-signin-heading">Please sign in</h2>
+  <div *ngIf="invalidLogin" class="alert alert-danger">Invalid username or password</div>
+  <label for="username" class="sr-only">User Name</label>
+  <input type="text" name="username" id="username" ngModel class="form-control" required autofocus
+  placeholder="username">
+  <label for="password" class="sr-only">Password</label>
+  <input type="password" id="password" name="password" ngModel class="form-control" required
+  placeholder="password">
+  <button class="btn btn-lg btn-primary btn-block" type="submit">Log In</button> 
+</form>
