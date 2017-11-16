@@ -8,10 +8,7 @@ import { AuthService } from '../services/auth-service.service';
   styleUrls: ['./bs-navbar.component.css']
 })
 export class BsNavbarComponent {
-  username: string;
-  constructor(private auth: AuthService) { 
-    if(this.auth.currentUser){
-      this.username = this.auth.currentUser.username;
-    } 
+
+  constructor(private authService: AuthService) { 
   }
 }

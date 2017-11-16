@@ -14,17 +14,17 @@
       </li>
       <ng-template #anonymousUser>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/login" (click)="login()">Log In</a>
+          <a class="nav-link" routerLink="/login">Log In</a>
         </li>
       </ng-template>
-      <li ngbDropdown *ngIf="username; else anonymousUser" class="nav-item dropdown">
+      <li ngbDropdown *ngIf="authService.isLoggedIn; else anonymousUser" class="nav-item dropdown">
         <a ngbDropdownToggle class="nav-link dropdown-toggle" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          {{ username }}
+          {{ authService.currentUser.username }}
         </a>
         <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdown01">
           <a class="dropdown-item" routerLink="/my/orders">My Orders</a>
           <a class="dropdown-item" routerLink="/admin/products">Manage Products</a>
-          <a class="dropdown-item" (click)="auth.logout()">Log Out</a>
+          <a class="dropdown-item" (click)="authService.logout()">Log Out</a>
         </div>
       </li>
     </ul>
