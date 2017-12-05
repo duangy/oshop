@@ -21,6 +21,8 @@ import { AdminProductsComponent } from './admin/admin-products/admin-products.co
 import { AdminOrdersComponent } from './admin/admin-orders/admin-orders.component';
 import { LoginComponent } from './login/login.component';
 import { AuthService } from './services/auth-service.service';
+import { CategoryService } from './services/category.service';
+import { ProductFormComponent } from './admin/product-form/product-form.component';
 
 
 @NgModule({
@@ -35,7 +37,8 @@ import { AuthService } from './services/auth-service.service';
     MyOrdersComponent,
     AdminProductsComponent,
     AdminOrdersComponent,
-    LoginComponent
+    LoginComponent,
+    ProductFormComponent
   ],
   imports: [
     BrowserModule,
@@ -54,11 +57,13 @@ import { AuthService } from './services/auth-service.service';
       {path: 'order-success', component: OrderSuccessComponent},
       {path: 'login', component: LoginComponent},
       {path: 'admin/products', component: AdminProductsComponent},
+      {path: 'admin/products/new', component: ProductFormComponent},
       {path: 'admin/orders', component: AdminOrdersComponent},
     ])
   ],
   providers: [
-    AuthService
+    AuthService,
+    CategoryService
   ],
   bootstrap: [AppComponent]
 })
