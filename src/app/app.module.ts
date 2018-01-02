@@ -22,6 +22,7 @@ import { AdminOrdersComponent } from './admin/admin-orders/admin-orders.componen
 import { LoginComponent } from './login/login.component';
 import { AuthService } from './services/auth-service.service';
 import { CategoryService } from './services/category.service';
+import { ProductService } from './services/product.service';
 import { ProductFormComponent } from './admin/product-form/product-form.component';
 
 
@@ -63,7 +64,8 @@ import { ProductFormComponent } from './admin/product-form/product-form.componen
   ],
   providers: [
     AuthService,
-    CategoryService
+    CategoryService,
+    ProductService
   ],
   bootstrap: [AppComponent]
 })
