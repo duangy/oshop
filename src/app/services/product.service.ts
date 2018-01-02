@@ -7,7 +7,10 @@ export class ProductService {
   constructor(private http: HttpClient) { }
 
   create(product) {
-    return this.http.post('api/product', product);
+    return this.http.post('api/product/', product);
   }
 
+  getAll() {
+    return this.http.get('api/product/');
+  }
 }

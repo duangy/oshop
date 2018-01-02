@@ -6,7 +6,9 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CustomFormsModule } from 'ng2-validation';
 import { HttpClientModule } from '@angular/common/http';
+import { CurrencyPipe } from '@angular/common';
 
 import { environment } from './../environments/environment'; 
 import { AppComponent } from './app.component';
@@ -44,6 +46,7 @@ import { ProductFormComponent } from './admin/product-form/product-form.componen
   imports: [
     BrowserModule,
     FormsModule,
+    CustomFormsModule,
     ReactiveFormsModule,
     HttpClientModule,
     AngularFireModule.initializeApp(environment.firebase),
