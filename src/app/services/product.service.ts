@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { HttpParams } from '@angular/common/http/src/params';
 
 @Injectable()
 export class ProductService {
@@ -10,8 +11,8 @@ export class ProductService {
     return this.http.post('api/product/', product);
   }
 
-  getAll() {
-    return this.http.get('api/product/');
+  getAll(params?: HttpParams) {
+    return this.http.get('api/product/', {params: params});
   }
 
   get(productId) {
