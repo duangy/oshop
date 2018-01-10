@@ -16,8 +16,8 @@ export class ShoppingCartService {
   }
 
   private async getOrCreateCartId() {
-    let cartId = localStorage.getItem('cartId');
-    if(cartId) {return cartId;}
+    let cart = localStorage.getItem('cart');
+    if(cart) {return cart;}
 
     let result = await this.create();
     localStorage.setItem('carId', result['id']);
